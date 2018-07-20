@@ -1,0 +1,30 @@
+一、安装
+    1.在Git官网下载并安装git, MAC电脑还可以通过xcode或者homebrew安装git
+    2.安装完毕设置此电脑git使用者
+        $ git config --global user.name 用户名
+        $ git config --global user.email 邮箱
+二、创建版本库
+    1.初始化项目目录(初始化完毕后 当前项目目录会自动生成一个.git文件夹)
+        $ git init
+    2.在仓库中新建文件叫做ReadMe,在文件中输入Git is a version control system!
+        输入 $ git status 查看当前仓库的状态:
+        Untracked files:
+          (use "git add <file>..." to include in what will be committed)
+
+                ReadMe.txt
+        git提示仓库中有一个为跟踪的文件ReadMe.txt,提示用户通过add file添加到git仓库
+        输入 $git add ReadMe.txt
+        再次输入$ git status
+        Changes to be committed:
+          (use "git rm --cached <file>..." to unstage)
+
+                new file:   ReadMe
+       输入 $ git commit -m "created a readme file"
+       再次输入 $ git status
+       On branch master
+       nothing to commit, working tree clean
+       提示主分支中没有需要提交的事物,工程树是干净的这样我们就完成git文件的提交
+    3.总结  git只能跟踪文件的改动(新建文件,删除文件,文件内容的变化),每当文件发生改变时git会提示使用者当前工作区(
+    用户可以操作和看到的文件夹)与git仓库中的文件不一致,我们需要通过$git add <filename>将修改的文件添加到暂存区,
+    再通过 $ git commit -m "提交信息" 将暂存区的文件提交到git仓库中
+    4. 备注 $ git status 查看git仓库状态   $ git diff查看工作区修改git仓库文件详情

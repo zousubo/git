@@ -1,0 +1,44 @@
+版本回退
+  一、查看历史版本
+    当版本仓库提交多次后，仓库中就会保留每次提交时的版本,查看历史版本
+    输入$ git log
+    打印结果:
+        commit 29a3b9421895f0822d46be044b6359d780314dd8 (HEAD -> master)
+        Author: GEC-teacher <2874304856@qq.com>
+        Date:   Wed Jul 18 15:02:50 2018 +0800
+
+            add distributed word
+
+        commit 9078872ffa21ac7d7744ed594d390094026eda07
+        Author: GEC-teacher <2874304856@qq.com>
+        Date:   Wed Jul 18 15:00:12 2018 +0800
+
+            wrote a newline at ReadMe
+
+        commit 5bd8d635e72e1f53d6f2d5798b4fc7b205700518
+        Author: GEC-teacher <2874304856@qq.com>
+        Date:   Wed Jul 18 14:44:03 2018 +0800
+
+            created a readme file
+    简写历史版本信息一行输出
+    输入$ git log --pretty=online
+    打印结果:
+        29a3b9421895f0822d46be044b6359d780314dd8 (HEAD -> master) add distributed word
+        9078872ffa21ac7d7744ed594d390094026eda07 wrote a newline at ReadMe
+        5bd8d635e72e1f53d6f2d5798b4fc7b205700518 created a readme file
+
+  二、回退版本
+    1.回退上一个版本
+    输入$ git reset --hard HEAD^^
+    2.返回指定的版本
+    输入$ git reset --hard commitID  // commitID 只需要输入前几位就好了
+    // 注意 hard 是一个指针修改展示在工作区展示的文件
+    3.当回退到旧的版本后通过$ git log 无法打印出回退之前的版本,若发生电脑关机或者停电无法回到新版本
+    $ git reflog  记录了用户的每一次命令通过该日志找到你需要返回的新版本号
+    9078872 (HEAD -> master) HEAD@{0}: reset: moving to HEAD^
+    29a3b94 HEAD@{1}: reset: moving to 29a3b9
+    5bd8d63 HEAD@{2}: reset: moving to HEAD^
+    9078872 (HEAD -> master) HEAD@{3}: reset: moving to HEAD^
+    29a3b94 HEAD@{4}: commit: add distributed word
+    9078872 (HEAD -> master) HEAD@{5}: commit: wrote a newline at ReadMe
+    5bd8d63 HEAD@{6}: commit (initial): created a readme file

@@ -1,0 +1,25 @@
+注册github/码云
+创建SSH key 识别当前电脑(让远程仓库信任此电脑)
+在Git Bash中输入
+ ssh-keygen -t rsa -C "2874304856@qq.com"
+ 生成ssh key
+The key's randomart image is:
++---[RSA 2048]----+
+|                 |
+|                 |
+|              .  |
+|         o     o |
+|        S +. .. o|
+|        ..oo+ =*.|
+|     . o.ooBo*++.|
+|      = E=o+@oo  |
+|     . ==@+++*.  |
++----[SHA256]-----+
+ 存放ssh key 目录 默认 /c/Users/newuser/.ssh/
+ id_rsa      ssh key秘钥 (秘钥一定要保密)
+ id_rsa.pub  ssh key公钥 (公钥可以公开)
+
+ 打开git hub设置页面进入SSH and GPG keys 点击new SSH key
+ 输入title 随便写
+ key  输入 id_rsa.pub 内的文本内容
+ 点击 add SSH key 完成

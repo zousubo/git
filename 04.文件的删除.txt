@@ -1,0 +1,16 @@
+文件删除操作
+  当用户将工作区已经提交到仓库中的文件删除时输入$git status
+  On branch master
+  Changes not staged for commit:
+    (use "git add/rm <file>..." to update what will be committed)
+    (use "git checkout -- <file>..." to discard changes in working directory)
+
+          deleted:    a.txt
+
+  no changes added to commit (use "git add" and/or "git commit -a")
+  提示Git已经知道你删除了a.txt文件,工作区与版本仓库不一致告诉用户那些文件被删除了
+
+  提交删除命令到暂存区
+    输入 $git rm a.txt 告诉暂存区删除指定文件
+  将删除操作提交到版本库中
+    $ git commit -m "message"
